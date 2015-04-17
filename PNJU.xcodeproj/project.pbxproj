@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		925B398E1AE0E7F800638F3A /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 925B398D1AE0E7F800638F3A /* NetworkManager.m */; };
+		92BF87AC1AE088EC00C8AE33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF87AB1AE088EC00C8AE33 /* AppDelegate.m */; };
+		92BF87AE1AE088EC00C8AE33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF87AD1AE088EC00C8AE33 /* main.m */; };
+		92BF87B11AE088EC00C8AE33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF87B01AE088EC00C8AE33 /* ViewController.m */; };
+		92BF87B31AE088EC00C8AE33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BF87B21AE088EC00C8AE33 /* Images.xcassets */; };
+		92BF87B61AE088EC00C8AE33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92BF87B41AE088EC00C8AE33 /* Main.storyboard */; };
+		92BF87C21AE088EC00C8AE33 /* PNJUTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF87C11AE088EC00C8AE33 /* PNJUTests.m */; };
+		92BF87D21AE0890200C8AE33 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BF87D11AE0890200C8AE33 /* NotificationCenter.framework */; };
+		92BF87D91AE0890200C8AE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92BF87D71AE0890200C8AE33 /* InfoPlist.strings */; };
+		92BF87DC1AE0890200C8AE33 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF87DB1AE0890200C8AE33 /* TodayViewController.m */; };
+		92BF87DE1AE0890200C8AE33 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BF87DD1AE0890200C8AE33 /* TodayViewController.xib */; };
+		92BF87E11AE0890200C8AE33 /* PNJUWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 92BF87CF1AE0890200C8AE33 /* PNJUWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92BF87BC1AE088EC00C8AE33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92BF879D1AE088EC00C8AE33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92BF87A41AE088EC00C8AE33;
+			remoteInfo = PNJU;
+		};
+		92BF87DF1AE0890200C8AE33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92BF879D1AE088EC00C8AE33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92BF87CE1AE0890200C8AE33;
+			remoteInfo = PNJUWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		92BF87E51AE0890200C8AE33 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				92BF87E11AE0890200C8AE33 /* PNJUWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		925B398C1AE0E7F800638F3A /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		925B398D1AE0E7F800638F3A /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		92BF87A51AE088EC00C8AE33 /* PNJU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PNJU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92BF87A91AE088EC00C8AE33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92BF87AA1AE088EC00C8AE33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		92BF87AB1AE088EC00C8AE33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		92BF87AD1AE088EC00C8AE33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92BF87AF1AE088EC00C8AE33 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		92BF87B01AE088EC00C8AE33 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		92BF87B21AE088EC00C8AE33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		92BF87B51AE088EC00C8AE33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92BF87BB1AE088EC00C8AE33 /* PNJUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PNJUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92BF87C01AE088EC00C8AE33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92BF87C11AE088EC00C8AE33 /* PNJUTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNJUTests.m; sourceTree = "<group>"; };
+		92BF87CF1AE0890200C8AE33 /* PNJUWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PNJUWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		92BF87D11AE0890200C8AE33 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		92BF87D51AE0890200C8AE33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92BF87D61AE0890200C8AE33 /* PNJUWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PNJUWidget.entitlements; sourceTree = "<group>"; };
+		92BF87D81AE0890200C8AE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92BF87DA1AE0890200C8AE33 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		92BF87DB1AE0890200C8AE33 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		92BF87DD1AE0890200C8AE33 /* TodayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92BF87B81AE088EC00C8AE33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92BF87CC1AE0890200C8AE33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92BF87D21AE0890200C8AE33 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92BF879C1AE088EC00C8AE33 = {
+			isa = PBXGroup;
+			children = (
+				92BF87A71AE088EC00C8AE33 /* PNJU */,
+				92BF87BE1AE088EC00C8AE33 /* PNJUTests */,
+				92BF87D31AE0890200C8AE33 /* PNJUWidget */,
+				92BF87D01AE0890200C8AE33 /* Frameworks */,
+				92BF87A61AE088EC00C8AE33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92BF87A61AE088EC00C8AE33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92BF87A51AE088EC00C8AE33 /* PNJU.app */,
+				92BF87BB1AE088EC00C8AE33 /* PNJUTests.xctest */,
+				92BF87CF1AE0890200C8AE33 /* PNJUWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92BF87A71AE088EC00C8AE33 /* PNJU */ = {
+			isa = PBXGroup;
+			children = (
+				92BF87AA1AE088EC00C8AE33 /* AppDelegate.h */,
+				92BF87AB1AE088EC00C8AE33 /* AppDelegate.m */,
+				92BF87AF1AE088EC00C8AE33 /* ViewController.h */,
+				92BF87B01AE088EC00C8AE33 /* ViewController.m */,
+				92BF87B21AE088EC00C8AE33 /* Images.xcassets */,
+				92BF87B41AE088EC00C8AE33 /* Main.storyboard */,
+				92BF87A81AE088EC00C8AE33 /* Supporting Files */,
+			);
+			path = PNJU;
+			sourceTree = "<group>";
+		};
+		92BF87A81AE088EC00C8AE33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92BF87A91AE088EC00C8AE33 /* Info.plist */,
+				92BF87AD1AE088EC00C8AE33 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92BF87BE1AE088EC00C8AE33 /* PNJUTests */ = {
+			isa = PBXGroup;
+			children = (
+				92BF87C11AE088EC00C8AE33 /* PNJUTests.m */,
+				92BF87BF1AE088EC00C8AE33 /* Supporting Files */,
+			);
+			path = PNJUTests;
+			sourceTree = "<group>";
+		};
+		92BF87BF1AE088EC00C8AE33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92BF87C01AE088EC00C8AE33 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92BF87D01AE0890200C8AE33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92BF87D11AE0890200C8AE33 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92BF87D31AE0890200C8AE33 /* PNJUWidget */ = {
+			isa = PBXGroup;
+			children = (
+				92BF87DA1AE0890200C8AE33 /* TodayViewController.h */,
+				92BF87DB1AE0890200C8AE33 /* TodayViewController.m */,
+				92BF87DD1AE0890200C8AE33 /* TodayViewController.xib */,
+				92BF87D41AE0890200C8AE33 /* Supporting Files */,
+				925B398C1AE0E7F800638F3A /* NetworkManager.h */,
+				925B398D1AE0E7F800638F3A /* NetworkManager.m */,
+			);
+			path = PNJUWidget;
+			sourceTree = "<group>";
+		};
+		92BF87D41AE0890200C8AE33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92BF87D51AE0890200C8AE33 /* Info.plist */,
+				92BF87D61AE0890200C8AE33 /* PNJUWidget.entitlements */,
+				92BF87D71AE0890200C8AE33 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92BF87A41AE088EC00C8AE33 /* PNJU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92BF87C51AE088EC00C8AE33 /* Build configuration list for PBXNativeTarget "PNJU" */;
+			buildPhases = (
+				92BF87A11AE088EC00C8AE33 /* Sources */,
+				92BF87A31AE088EC00C8AE33 /* Resources */,
+				92BF87E51AE0890200C8AE33 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92BF87E01AE0890200C8AE33 /* PBXTargetDependency */,
+			);
+			name = PNJU;
+			productName = PNJU;
+			productReference = 92BF87A51AE088EC00C8AE33 /* PNJU.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92BF87BA1AE088EC00C8AE33 /* PNJUTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92BF87C81AE088EC00C8AE33 /* Build configuration list for PBXNativeTarget "PNJUTests" */;
+			buildPhases = (
+				92BF87B71AE088EC00C8AE33 /* Sources */,
+				92BF87B81AE088EC00C8AE33 /* Frameworks */,
+				92BF87B91AE088EC00C8AE33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92BF87BD1AE088EC00C8AE33 /* PBXTargetDependency */,
+			);
+			name = PNJUTests;
+			productName = PNJUTests;
+			productReference = 92BF87BB1AE088EC00C8AE33 /* PNJUTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92BF87CE1AE0890200C8AE33 /* PNJUWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92BF87E21AE0890200C8AE33 /* Build configuration list for PBXNativeTarget "PNJUWidget" */;
+			buildPhases = (
+				92BF87CB1AE0890200C8AE33 /* Sources */,
+				92BF87CC1AE0890200C8AE33 /* Frameworks */,
+				92BF87CD1AE0890200C8AE33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PNJUWidget;
+			productName = PNJUWidget;
+			productReference = 92BF87CF1AE0890200C8AE33 /* PNJUWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92BF879D1AE088EC00C8AE33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Cee;
+				TargetAttributes = {
+					92BF87A41AE088EC00C8AE33 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					92BF87BA1AE088EC00C8AE33 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 92BF87A41AE088EC00C8AE33;
+					};
+					92BF87CE1AE0890200C8AE33 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 92BF87A01AE088EC00C8AE33 /* Build configuration list for PBXProject "PNJU" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92BF879C1AE088EC00C8AE33;
+			productRefGroup = 92BF87A61AE088EC00C8AE33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92BF87A41AE088EC00C8AE33 /* PNJU */,
+				92BF87BA1AE088EC00C8AE33 /* PNJUTests */,
+				92BF87CE1AE0890200C8AE33 /* PNJUWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92BF87A31AE088EC00C8AE33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92BF87B31AE088EC00C8AE33 /* Images.xcassets in Resources */,
+				92BF87B61AE088EC00C8AE33 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92BF87B91AE088EC00C8AE33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92BF87CD1AE0890200C8AE33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92BF87DE1AE0890200C8AE33 /* TodayViewController.xib in Resources */,
+				92BF87D91AE0890200C8AE33 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92BF87A11AE088EC00C8AE33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92BF87B11AE088EC00C8AE33 /* ViewController.m in Sources */,
+				92BF87AE1AE088EC00C8AE33 /* main.m in Sources */,
+				92BF87AC1AE088EC00C8AE33 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92BF87B71AE088EC00C8AE33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92BF87C21AE088EC00C8AE33 /* PNJUTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92BF87CB1AE0890200C8AE33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925B398E1AE0E7F800638F3A /* NetworkManager.m in Sources */,
+				92BF87DC1AE0890200C8AE33 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92BF87BD1AE088EC00C8AE33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92BF87A41AE088EC00C8AE33 /* PNJU */;
+			targetProxy = 92BF87BC1AE088EC00C8AE33 /* PBXContainerItemProxy */;
+		};
+		92BF87E01AE0890200C8AE33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92BF87CE1AE0890200C8AE33 /* PNJUWidget */;
+			targetProxy = 92BF87DF1AE0890200C8AE33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92BF87B41AE088EC00C8AE33 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92BF87B51AE088EC00C8AE33 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		92BF87D71AE0890200C8AE33 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92BF87D81AE0890200C8AE33 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92BF87C31AE088EC00C8AE33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		92BF87C41AE088EC00C8AE33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		92BF87C61AE088EC00C8AE33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PNJU/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92BF87C71AE088EC00C8AE33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PNJU/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		92BF87C91AE088EC00C8AE33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PNJUTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PNJU.app/Contents/MacOS/PNJU";
+			};
+			name = Debug;
+		};
+		92BF87CA1AE088EC00C8AE33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PNJUTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PNJU.app/Contents/MacOS/PNJU";
+			};
+			name = Release;
+		};
+		92BF87E31AE0890200C8AE33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PNJUWidget/PNJUWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PNJUWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		92BF87E41AE0890200C8AE33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PNJUWidget/PNJUWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PNJUWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92BF87A01AE088EC00C8AE33 /* Build configuration list for PBXProject "PNJU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92BF87C31AE088EC00C8AE33 /* Debug */,
+				92BF87C41AE088EC00C8AE33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92BF87C51AE088EC00C8AE33 /* Build configuration list for PBXNativeTarget "PNJU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92BF87C61AE088EC00C8AE33 /* Debug */,
+				92BF87C71AE088EC00C8AE33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92BF87C81AE088EC00C8AE33 /* Build configuration list for PBXNativeTarget "PNJUTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92BF87C91AE088EC00C8AE33 /* Debug */,
+				92BF87CA1AE088EC00C8AE33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92BF87E21AE0890200C8AE33 /* Build configuration list for PBXNativeTarget "PNJUWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92BF87E31AE0890200C8AE33 /* Debug */,
+				92BF87E41AE0890200C8AE33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92BF879D1AE088EC00C8AE33 /* Project object */;
+}
