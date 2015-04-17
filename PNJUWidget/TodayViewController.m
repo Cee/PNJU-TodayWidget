@@ -12,7 +12,6 @@
 #import "NetworkManager.h"
 
 @interface TodayViewController () <NCWidgetProviding>
-@property (nonatomic, strong) NetworkManager *sharedNetworkManager;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *password;
 @property (weak) IBOutlet NSTextField *remainingTextField;
@@ -29,10 +28,9 @@
     completionHandler(NCUpdateResultNoData);
 }
 
-- (instancetype)init
+- (id)init
 {
     if (self = [super init]) {
-        _sharedNetworkManager = [NetworkManager sharedNetworkManager];
         self.username = @"";    // Your username here
         self.password = @"";    // Your password here
     }
@@ -43,8 +41,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([self.sharedNetworkManager checkOnline]) {
-        id json = [self.sharedNetworkManager userInfo];
+    if ([[NetworkManager sharedNetworkManager] checkOnline]) {
+        id json = [[NetworkManager sharedNetworkManager] userInfo];
         [self.remainingTextField setStringValue:[NSString stringWithFormat:@"用户名：%@ \n帐号余额：%@ 元\n登录地点：%@",
                                                  [json objectForKey:@"username"],
                                                  [json objectForKey:@"payamount"],
@@ -60,13 +58,13 @@
 
 - (IBAction)btnPressed:(id)sender {
     if (self.isLoggedIn) {
-        [self.sharedNetworkManager logout];
+        [[NetworkManager sharedNetworkManager] logout];
         [self.controlBtn setTitle:@"Login"];
         [self.remainingTextField setStringValue:@"未登录"];
     } else {
-        [self.sharedNetworkManager loginWithUsername:self.username
+        [[NetworkManager sharedNetworkManager] loginWithUsername:self.username
                                             password:self.password];
-        id json = [self.sharedNetworkManager userInfo];
+        id json = [[NetworkManager sharedNetworkManager] userInfo];
         [self.remainingTextField setStringValue:[NSString stringWithFormat:@"用户名：%@ \n帐号余额：%@ 元\n登录地点：%@",
                                                  [json objectForKey:@"username"],
                                                  [json objectForKey:@"payamount"],
