@@ -35,9 +35,6 @@
         _sharedNetworkManager = [NetworkManager sharedNetworkManager];
         self.username = @"";    // Your username here
         self.password = @"";    // Your password here
-        self.isLoggedIn = NO;
-        [self.controlBtn setTitle:@"Login"];
-        [self.remainingTextField setStringValue:@"未登录"];
     }
     
     return self;
@@ -46,6 +43,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self.sharedNetworkManager checkOnline]) {
+        id json = [self.sharedNetworkManager userInfo];
+        [self.remainingTextField setStringValue:[NSString stringWithFormat:@"用户名：%@ \n帐号余额：%@ 元\n登录地点：%@",
+                                                 [json objectForKey:@"username"],
+                                                 [json objectForKey:@"payamount"],
+                                                 [json objectForKey:@"area_name"]]];
+        [self.controlBtn setTitle:@"Logout"];
+        self.isLoggedIn = YES;
+    } else {
+        [self.controlBtn setTitle:@"Login"];
+        [self.remainingTextField setStringValue:@"未登录"];
+        self.isLoggedIn = NO;
+    }
 }
 
 - (IBAction)btnPressed:(id)sender {
@@ -54,12 +64,13 @@
         [self.controlBtn setTitle:@"Login"];
         [self.remainingTextField setStringValue:@"未登录"];
     } else {
-        NSString *responseStr = [self.sharedNetworkManager loginWithUsername:self.username password:self.password];
-        NSData *data = [responseStr dataUsingEncoding:NSUTF8StringEncoding];
-        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        json = [json objectForKey:@"userinfo"];
-        NSLog(@"%@", [json objectForKey:@"payamount"]);
-        [self.remainingTextField setStringValue:[NSString stringWithFormat:@"用户名：%@ \n帐号余额：%@ 元\n登录地点：%@", [json objectForKey:@"username"], [json objectForKey:@"payamount"], [json objectForKey:@"area_name"]]];
+        [self.sharedNetworkManager loginWithUsername:self.username
+                                            password:self.password];
+        id json = [self.sharedNetworkManager userInfo];
+        [self.remainingTextField setStringValue:[NSString stringWithFormat:@"用户名：%@ \n帐号余额：%@ 元\n登录地点：%@",
+                                                 [json objectForKey:@"username"],
+                                                 [json objectForKey:@"payamount"],
+                                                 [json objectForKey:@"area_name"]]];
         [self.controlBtn setTitle:@"Logout"];
     }
     self.isLoggedIn = !self.isLoggedIn;

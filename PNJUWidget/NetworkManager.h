@@ -13,5 +13,7 @@
 + (instancetype)sharedNetworkManager;
 - (NSString *)loginWithUsername:(NSString *)username password:(NSString *)password;
 - (void)logout;
+- (BOOL)checkOnline;
+- (id)userInfo;
 
 @end

@@ -48,4 +48,32 @@
     NSLog(@"%@", responseStr);
 }
 
+- (BOOL)checkOnline
+{
+    NSURL *url = [[NSURL alloc] initWithString:@"http://p.nju.edu.cn/proxy/online.php"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", responseStr);
+    id json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+    NSUInteger replyCodeString = [[json objectForKey:@"reply_code"] integerValue];
+    if (replyCodeString == 301) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (id)userInfo
+{
+    NSURL *url = [[NSURL alloc] initWithString:@"http://p.nju.edu.cn/proxy/online.php"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    json = [json objectForKey:@"userinfo"];
+    return json;
+}
+
 @end
