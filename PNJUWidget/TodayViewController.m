@@ -24,8 +24,9 @@
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult result))completionHandler {
     // Update your data and prepare for a snapshot. Call completion handler when you are done
     // with NoData if nothing has changed or NewData if there is new data since the last
-    // time we called you
-    completionHandler(NCUpdateResultNoData);
+    // time we called
+    [self checkStatus];
+    completionHandler(NCUpdateResultNewData);
 }
 
 - (id)init
@@ -41,21 +42,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([[NetworkManager sharedNetworkManager] checkOnline]) {
-        id json = [[NetworkManager sharedNetworkManager] userInfo];
-        [self.remainingTextField setStringValue:[NSString stringWithFormat:@"用户名：%@ \n帐号余额：%@ 元\n登录地点：%@",
-                                                 [json objectForKey:@"username"],
-                                                 [json objectForKey:@"payamount"],
-                                                 [json objectForKey:@"area_name"]]];
-        [self.controlBtn setTitle:@"Logout"];
-        self.isLoggedIn = YES;
-    } else {
-        [self.controlBtn setTitle:@"Login"];
-        [self.remainingTextField setStringValue:@"未登录"];
-        self.isLoggedIn = NO;
-    }
+    [self checkStatus];
 }
 
+#pragma mark - IBActions
 - (IBAction)btnPressed:(id)sender {
     if (self.isLoggedIn) {
         [[NetworkManager sharedNetworkManager] logout];
@@ -73,5 +63,24 @@
     }
     self.isLoggedIn = !self.isLoggedIn;
 }
+
+#pragma mark - Private Method
+- (void)checkStatus
+{
+    if ([[NetworkManager sharedNetworkManager] checkOnline]) {
+        id json = [[NetworkManager sharedNetworkManager] userInfo];
+        [self.remainingTextField setStringValue:[NSString stringWithFormat:@"用户名：%@ \n帐号余额：%@ 元\n登录地点：%@",
+                                                 [json objectForKey:@"username"],
+                                                 [json objectForKey:@"payamount"],
+                                                 [json objectForKey:@"area_name"]]];
+        [self.controlBtn setTitle:@"Logout"];
+        self.isLoggedIn = YES;
+    } else {
+        [self.controlBtn setTitle:@"Login"];
+        [self.remainingTextField setStringValue:@"未登录"];
+        self.isLoggedIn = NO;
+    }
+}
+
 @end
 
