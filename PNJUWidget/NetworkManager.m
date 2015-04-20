@@ -48,20 +48,24 @@
     NSLog(@"%@", responseStr);
 }
 
-- (BOOL)checkOnline
+- (ConnectedStatus)checkOnline
 {
     NSURL *url = [[NSURL alloc] initWithString:@"http://p.nju.edu.cn/proxy/online.php"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:@"POST"];
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSError *error;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
+    if (error) {
+        return ConnectedStatusError;
+    }
     NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     NSLog(@"%@", responseStr);
     id json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
     NSUInteger replyCodeString = [[json objectForKey:@"reply_code"] integerValue];
     if (replyCodeString == 301) {
-        return YES;
+        return ConnectedStatusSuccess;
     } else {
-        return NO;
+        return ConnectedStatusFail;
     }
 }
 

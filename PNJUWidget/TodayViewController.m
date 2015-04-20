@@ -25,8 +25,16 @@
     // Update your data and prepare for a snapshot. Call completion handler when you are done
     // with NoData if nothing has changed or NewData if there is new data since the last
     // time we called
-    [self checkStatus];
-    completionHandler(NCUpdateResultNewData);
+    ConnectedStatus status = [self checkStatus];
+    switch (status) {
+        case ConnectedStatusSuccess:
+        case ConnectedStatusFail:
+            completionHandler(NCUpdateResultNewData);
+            break;
+        default:
+            completionHandler(NCUpdateResultFailed);
+            break;
+    }
 }
 
 - (id)init
@@ -65,21 +73,30 @@
 }
 
 #pragma mark - Private Method
-- (void)checkStatus
+- (ConnectedStatus)checkStatus
 {
-    if ([[NetworkManager sharedNetworkManager] checkOnline]) {
-        id json = [[NetworkManager sharedNetworkManager] userInfo];
-        [self.remainingTextField setStringValue:[NSString stringWithFormat:@"用户名：%@ \n帐号余额：%@ 元\n登录地点：%@",
-                                                 [json objectForKey:@"username"],
-                                                 [json objectForKey:@"payamount"],
-                                                 [json objectForKey:@"area_name"]]];
-        [self.controlBtn setTitle:@"Logout"];
-        self.isLoggedIn = YES;
-    } else {
-        [self.controlBtn setTitle:@"Login"];
-        [self.remainingTextField setStringValue:@"未登录"];
-        self.isLoggedIn = NO;
+    ConnectedStatus status = [[NetworkManager sharedNetworkManager] checkOnline];
+    id json;
+    switch (status) {
+        case ConnectedStatusSuccess:
+            json = [[NetworkManager sharedNetworkManager] userInfo];
+            [self.remainingTextField setStringValue:[NSString stringWithFormat:@"用户名：%@ \n帐号余额：%@ 元\n登录地点：%@",
+                                                     [json objectForKey:@"username"],
+                                                     [json objectForKey:@"payamount"],
+                                                     [json objectForKey:@"area_name"]]];
+            [self.controlBtn setTitle:@"Logout"];
+            self.isLoggedIn = YES;
+            break;
+        case ConnectedStatusFail:
+        case ConnectedStatusError:
+            [self.controlBtn setTitle:@"Login"];
+            [self.remainingTextField setStringValue:@"未登录"];
+            self.isLoggedIn = NO;
+            break;
+        default:
+            break;
     }
+    return status;
 }
 
 @end

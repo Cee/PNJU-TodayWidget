@@ -8,12 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, ConnectedStatus) {
+    ConnectedStatusSuccess,
+    ConnectedStatusFail,
+    ConnectedStatusError,
+};
+
 @interface NetworkManager : NSObject
 
 + (instancetype)sharedNetworkManager;
 - (NSString *)loginWithUsername:(NSString *)username password:(NSString *)password;
 - (void)logout;
-- (BOOL)checkOnline;
+- (ConnectedStatus)checkOnline;
 - (id)userInfo;
 
 @end
