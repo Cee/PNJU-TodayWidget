@@ -50,6 +50,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.controlBtn resignFirstResponder];
     [self checkStatus];
 }
 
