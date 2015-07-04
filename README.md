@@ -13,6 +13,8 @@
 
 + [Windows](https://github.com/miaoxw/Auto-p.nju)
 + [iOS &  Watch](https://github.com/Cee/PNJU-Watch)
++ [Android](https://github.com/padeoe/AutoConnect)
++ [Alfred Workflow](https://github.com/Cee/PNJU-Workflow)
 
 ## License
 
